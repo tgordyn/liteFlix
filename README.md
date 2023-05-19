@@ -1,4 +1,4 @@
-In this project a responsive web application for a similar Netflix app was created following the <a href="./public/images/Liteflix Challenge.pdf">requirements</a> and the designs provided.
+In this project a responsive web application for a movie catalogue was created following the <a href="./public/images/Liteflix Challenge.pdf">requirements</a> and the designs provided.
 
 ## Technical Resources
 
