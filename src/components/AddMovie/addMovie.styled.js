@@ -32,18 +32,12 @@ export const ModalContainer = styled.div`
   backdrop-filter: blur(8px);
 
   @media (max-width: 767px) {
-    /* height: 100vh;
-    width: 100vw; */
-    // aca pruebas mobile
     top: 0;
     left: 0;
     transform: none;
     width: 100%;
     height: 100vh;
-    /* display: flex;
-    flex-direction: column; */
     justify-content: center;
-    //align-items: center;
     overflow-y: scroll;
   }
 
@@ -60,8 +54,11 @@ export const IconContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5% 8%;
+    padding: 2% 8%;
     width: 84%;
+    position: fixed;
+    top: 3%;
+    left: 0;
     #closeIconBtn {
       display: none;
     }
