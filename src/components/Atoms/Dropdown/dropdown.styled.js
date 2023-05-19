@@ -9,6 +9,10 @@ export const Dropdowncontainer = styled.div`
   display: inline-block;
   z-index: 1;
   margin-left: 11%;
+  @media (max-width: 767px) {
+    margin-left: 0;
+    size: 16px;
+  }
 `;
 
 export const TitleCtnr = styled.button`
@@ -26,8 +30,11 @@ export const TitleCtnr = styled.button`
     transform: scale(1.3);
   }
   @media (max-width: 767px) {
-    width: 40vw;
-    font-size: 20px;
+    width: 60vw;
+    font-size: 16px;
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 12px;
   }
 `;
 
@@ -59,10 +66,13 @@ export const DropdownSelect = styled.div`
   width: 20vw;
   letter-spacing: 4px;
   @media (max-width: 767px) {
-    width: 40vw;
-    font-size: 20px;
+    width: 60vw;
+    font-size: 16px;
   }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    font-size: 12px;
 
+  }
 `;
 
 export const DropdownOption = styled.p`
@@ -70,15 +80,12 @@ export const DropdownOption = styled.p`
   background: #242424;
   color: #ffffff;
   cursor: pointer;
-  height: 70%;
   padding: 5% 10%;
   justify-content: space-between;
   display: flex;
   font-weight: ${(props) => (props.boldstyle ? props.boldstyle : "400")};
 
   &:hover {
-    //transform: scale(1.1);
     letter-spacing: 0.3em;
-
   }
 `;
