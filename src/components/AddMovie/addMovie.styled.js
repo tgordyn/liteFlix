@@ -32,8 +32,19 @@ export const ModalContainer = styled.div`
   backdrop-filter: blur(8px);
 
   @media (max-width: 767px) {
+    /* height: 100vh;
+    width: 100vw; */
+    // aca pruebas mobile
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
     height: 100vh;
-    width: 100vw;
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: center;
+    //align-items: center;
+    overflow-y: scroll;
   }
 
   @media (min-width: 768px) {
@@ -199,6 +210,10 @@ const buttonStyles = css`
   &:focus {
     transform: scale(1.3);
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 767px) {
+    width: 80%;
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {

@@ -6,11 +6,17 @@ body {
   background-color: #242424;;
 }
 
-@media (min-width: 768px) {
+
   .modal-open {
     overflow: hidden;
   }
+  @media (max-width: 767px) {
+    .menu-open {
+        overflow: hidden;
+      }
+  }
 
+@media (min-width: 768px) {
   .modal-open::after {
     content: "";
     position: fixed;
@@ -21,5 +27,6 @@ body {
     backdrop-filter: blur(8px);
     z-index: 9999;
   }
+  
 }
 

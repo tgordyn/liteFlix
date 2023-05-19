@@ -1,4 +1,4 @@
-In this project a responsive web application for a similar Netflix app was created following the requirements and the designs provided.
+In this project a responsive web application for a similar Netflix app was created following the <a href="./public/images/Liteflix Challenge.pdf">requirements</a> and the designs provided.
 
 ## Technical Resources
 
@@ -8,6 +8,8 @@ In this project a responsive web application for a similar Netflix app was creat
 - Styles were implemented using `styled-components` and `css`
 - Icons were obtained from `material-ui`
 - Media queries were used for responsiveness
+- `React Context` for State management
+- Requests to api made with `Axios` 
 
 ## Installation
 

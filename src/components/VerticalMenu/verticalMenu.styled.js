@@ -17,7 +17,11 @@ export const MenuContainer = styled.div`
   }
   @media (max-width: 767px) {
     width: 100%;
+    height: 100vh;
+    left: 0;
     transform: translateX(100%);
+    justify-content: center;
+    overflow-y: scroll;
 
     #bellIconBtn {
       display: none;
@@ -77,13 +81,20 @@ export const MenuItem = styled.li`
 
   &:hover {
     padding: 10% 0 20% 10%;
-    transform: scale(1.3);
+    transform: scale(1.2);
     &:first-child {
       padding: 0 0 20% 10%;
     }
+    @media (max-width: 767px) {
+      padding: 5% 0 10% 10%;
+
+      &:first-child {
+        padding: 0 0 10% 10%;
+      }
+    }
   }
   @media (max-width: 767px) {
-    padding-bottom: 6%;
+    padding-bottom: 5%;
     font-size: 14px;
   }
 `;

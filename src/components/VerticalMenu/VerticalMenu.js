@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import LogoLiteFlix from "../Atoms/LogoLiteFlix.js";
 import IconButton from "../Atoms/IconButton";
 import { ReactComponent as CloseIcon } from "../../svg-icons/cerrar.svg";
@@ -32,6 +32,15 @@ const VerticalMenu = () => {
     handleClose();
     setModalOpen(true);
   };
+
+  // Add or remove a Class to the body if menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  }, [isOpen]);
 
   return (
     <MenuContainer className={`vertical-menu ${isOpen ? "open" : ""}`}>

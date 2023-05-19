@@ -53,7 +53,6 @@ export const PopularMoviesList = ({ movieList, selectedValue }) => {
       (a, b) => new Date(b.dateCreated) - new Date(a.dateCreated)
     );
     setMyMovies(storageMovies);
-    console.log("storage movies", storageMovies);
   }, [localStorageMovieData]);
 
   useEffect(() => {
@@ -89,7 +88,7 @@ export const PopularMoviesList = ({ movieList, selectedValue }) => {
             index={key}
           >
             <MovieDetailsContainer id="MovieCtr">
-              <PlayMovieButton>
+              <PlayMovieButton id="playButton">
                 <Reproducir />
               </PlayMovieButton>
               <MovieTitle id="titleHover">

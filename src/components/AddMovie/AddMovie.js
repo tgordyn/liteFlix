@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { addMoviesContext } from "../../contexts/AddMoviesContext";
 import { hamburgerMenuContext } from "../../contexts/HamburgerMenuContext";
 import { localStorageContext } from "../../contexts/LocalStorageContext";
@@ -40,10 +40,17 @@ const AddMovie = () => {
   const [updateFailed, setUpdateFailed] = useState(false);
   const [uploadedTitle, setUploadedTitle] = useState("");
 
+  // Add or remove a Class to the body if modal is open
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+  }, [modalOpen]);
+
   if (!modalOpen) return null;
-  // Adding a class to the body to make a blur effect when Modal is open
-  document.body.classList.add("modal-open");
-  
+
   const handleNameChange = (e) => {
     setName(e.target.value);
   };
@@ -74,7 +81,6 @@ const AddMovie = () => {
     setImage("");
     setUploaded(false);
     setUpdateFailed(false);
-    document.body.classList.remove("modal-open");
   };
 
   const handleMenuOpen = () => {

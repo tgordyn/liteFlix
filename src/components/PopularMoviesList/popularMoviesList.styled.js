@@ -86,7 +86,7 @@ export const MovieCard = styled.div`
 
   @media (max-width: 767px) {
     width: 60vw;
-    height: 22vh;
+    height: 30vh;
   }
   &:hover {
     background-image: linear-gradient(
@@ -107,6 +107,9 @@ export const MovieCard = styled.div`
     }
     #starsCtnr {
       display: flex;
+    }
+    #playButton{
+      width: 14%;
     }
   }
 `;
@@ -129,6 +132,9 @@ export const PlayCtnr = styled.div`
   display: none;
   letter-spacing: 2px;
   justify-content: space-around;
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
 `;
 
 const playButtonStyles = css`
@@ -137,11 +143,14 @@ const playButtonStyles = css`
   border: none;
   background: transparent;
   cursor: pointer;
+  svg {
+    width: 100%;
+      height: 100%;
+  }
   &:hover {
     svg {
       background: none;
-      width: 100%;
-      height: 100%;
+      
       circle {
         fill: #64eebc;
         stroke: #242424;
@@ -157,41 +166,29 @@ const playButtonStyles = css`
 
 export const PlayMovieButton = styled.button`
   ${playButtonStyles};
-
-  svg {
-    display: block;
-    width: 90%;
-    height: 90%;
-  }
+width: 20%;
+  
   @media (max-width: 767px) {
-    svg {
-      width: 120%;
-      height: 120%;
-    }
+    width: 22%;
   }
 `;
 
 export const PlayMovieHover = styled.button`
   ${playButtonStyles};
-  svg {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
 `;
 
 export const MovieTitle = styled.div`
   width: 100%;
   font-family: "Bebas Neue";
   font-weight: 400;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
   letter-spacing: 4px;
   color: #ffffff;
 
   transition: bottom 0.3s ease-in-out;
   @media (max-width: 767px) {
-    font-size: 28px;
+    font-size: 25px;
   }
   @media (min-width: 768px) and (max-width: 1023px) {
     font-size: 12px;
