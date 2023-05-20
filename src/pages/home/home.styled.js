@@ -91,7 +91,6 @@ export const MoviedDetailsContainer = styled.div`
   left: 6%;
   right: 30%;
   justify-content: center;
-  height: 60%;
   height: auto;
   ${fontMixin};
   @media (max-width: 767px) {
@@ -107,9 +106,6 @@ export const MoviedDetailsContainer = styled.div`
     top: 20%;
     bottom: none;
     height: auto;
-    #movieTitle {
-      font-size: 2.5rem;
-    }
   }
 `;
 
@@ -130,7 +126,12 @@ export const SubTitle = styled.div`
 `;
 
 export const MovieTitle = styled.div`
-  font-size: 5rem;
+  font-size: ${(props) =>
+    props.title.length > 15
+      ? "3.5rem"
+      : props.title.length < 5
+      ? "6rem"
+      : "5rem"};
   font-weight: 700;
   ${fontMixin};
   letter-spacing: 16px;
@@ -145,7 +146,12 @@ export const MovieTitle = styled.div`
   }
 
   @media (min-width: 768px) and (max-width: 1023px) {
-    width: 40%;
+    font-size: ${(props) =>
+      props.title.length > 15
+        ? "3rem"
+        : props.title.length < 5
+        ? "5rem"
+        : "4rem"};
   }
   @media (max-width: 550px) {
     font-size: 45px;

@@ -89,7 +89,7 @@ const Home = () => {
                         LITEFLIX
                       </span>
                     </SubTitle>
-                    <MovieTitle id="movieTitle">{randomMovie.original_title}</MovieTitle>
+                    <MovieTitle id="movieTitle" title={randomMovie.original_title}>{randomMovie.original_title}</MovieTitle>
                     <ButtonsContainer>
                       <ReproduceButton role="button">
                         <PlayIcon />
