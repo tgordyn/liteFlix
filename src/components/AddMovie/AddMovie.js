@@ -55,22 +55,26 @@ const AddMovie = () => {
     setName(e.target.value);
   };
 
-  // Logic to upload file and show progress bar percentage
+  // Logic to upload file (only image type allowed) and show progress bar percentage
   const uploadFile = (file) => {
-    setLoadingFile(true);
-    const xhr = new XMLHttpRequest();
+    if (file && file.type.includes("image")) {
+      setLoadingFile(true);
+      const xhr = new XMLHttpRequest();
 
-    xhr.upload.addEventListener("progress", function (event) {
-      const percentComplete = (event.loaded / event.total) * 100;
-      setProgress(percentComplete);
-    });
-    xhr.addEventListener("error", function () {
+      xhr.upload.addEventListener("progress", function (event) {
+        const percentComplete = (event.loaded / event.total) * 100;
+        setProgress(percentComplete);
+      });
+      xhr.addEventListener("error", function () {
+        setLoadingFile(false);
+        setUpdateFailed(true);
+      });
+      xhr.open("POST", "YOUR_UPLOAD_URL");
+      xhr.send(file);
+    } else {
       setLoadingFile(false);
       setUpdateFailed(true);
-    });
-
-    xhr.open("POST", "YOUR_UPLOAD_URL");
-    xhr.send(file);
+    }
   };
 
   // Closing Modal and setting the state
