@@ -45,6 +45,7 @@ export const HomeContainer = styled.div`
   animation: ${fadeIn} 0.8s ease-in-out;
 
   @media (max-width: 767px) {
+    width: auto;
     background-position: center;
     background-image: linear-gradient(
         to bottom,
